@@ -1,6 +1,7 @@
 # take a set of pubmed records downloaded using medline option, and extract all keywords
 from collections import Counter
 from fuzzywuzzy import fuzz
+import re
 
 def extract_all_keywords(filenames):
 	results = []
@@ -65,16 +66,15 @@ def extract_repeated_keywords(filenames, threshold=0):
 	return results
 	
 def read_contents(filename, num_pubs):
-	print 'lalala'
 	counter = 0
 	contents = ''
-	pubfile = open('filename')
+	pubfile = open(filename)
 	for line in pubfile:
-		if line.startswith('TI'):
+		if line.startswith('PMID'):
 			counter += 1
 			if counter > num_pubs:
 				break
-		contents += line
-		contents += '\n'
+#		print re.match('PMID|TI|AB|DP|FAU|AD|JT|OT', line)
+		if re.match('PMID|TI|AB|DP|FAU|AD|JT|OT|\n', line):
+			contents += line
 	return contents
-	

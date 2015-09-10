@@ -14,7 +14,7 @@ def query_pubmed(param, savefile):
 	if os.path.isfile(savefile):
 		print 'file exists, skip query'
 		return
-	pipe = subprocess.Popen(['perl', './download_pub.pl', param, savefile], stdin=subprocess.PIPE)
+	pipe = subprocess.Popen(['perl', './download_pub.pl', param, savefile, '2000'], stdin=subprocess.PIPE)
 	pipe.wait()
 	
 # seems like Esearch does search differently from the pubmed search bar. Sometimes a title query yields 

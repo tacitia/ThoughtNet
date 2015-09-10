@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Thought Net</title>
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="/static/lib/bootstrap-3.3.4/css/bootstrap.min.css" media="all" />
+	<link rel="stylesheet" href="/static/lib/qTip2/jquery.qtip.min.css" media="all"/>
+	<link rel="stylesheet" href="/static/css/style.css" media="all"/>
+
+    <!-- HTML5 shim, IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!--ELEMENTS-->
+    <div id="main">
+      <h2></h2>
+      <div id="title-query-div" class="form-group">
+      	<p><b>Step 1</b>: Enter a list of publication titles separated by newlines, or a list of search terms separated by space.</p>
+        <textarea rows="8" cols="100" id="title-input"></textarea>
+        <button id="title-input-submit" type="button" class="btn btn-primary btn-sm" data-loading-text="Querying PubMed...">Extract terms</button>
+      </div>
+      <div id="term-div">
+      	<p><b>Step 2</b>: Enter a list of publication titles separated by newlines, or a list of search terms separated by space.</p>
+        <div id="level-0-term-div" class="inner-term-div">
+          <h5>Terms</h5>
+          <div id="term-display-div">
+          </div>
+        </div>
+        <div id="level-1-term-div" class="inner-term-div">
+          <h5>Associated Terms</h5>
+          <div id="term-display-div">
+          </div>
+        </div>
+        <div class="alert alert-info process-msg" id="submit-term-query-alert" role="alert">
+          <button type="button" class="close" id="submit-term-query-alert-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="alert alert-info process-msg" id="term-downloaded-alert">
+          <button type="button" class="close" id="submit-term-query-alert-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div>
+          <button id="get-associated-terms" class="btn btn-primary btn-sm" data-loading-text="Retrieving associated terms...">Update associated terms</button>
+          <button id="search-pubs" class="btn btn-primary btn-sm" data-loading-text="Retrieving publications...">Search publications</button>
+          <div class="alert alert-info process-msg" id="submit-pub-query-alert" role="alert">
+            <button type="button" class="close" id="submit-term-query-alert-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="alert alert-info process-msg" id="pub-downloaded-alert">
+            <button type="button" class="close" id="submit-term-query-alert-close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+        </div>
+      </div>
+      <div id="pub-result-div" class="form-group">
+        <textarea rows="8" cols="100" id="pub-result-display"></textarea>
+      </div>        
+    </div>
+  	
+
+    <!--LIBRARIES-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/lib/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/lib/d3.v3.min.js"></script>
+	<script type="text/javascript" src="/static/lib/qTip2/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="/static/lib/amplify.min.js"></script>
+
+    <!--JAVASCRIPTS-->
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    <script type="text/javascript" src="/static/js/comm/amplifyJS.js"></script>
+    
+    </div>
+</body>
+</html>

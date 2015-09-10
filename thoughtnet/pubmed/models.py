@@ -1,3 +1,9 @@
 from django.db import models
+from django.forms import ModelForm
 
-# Create your models here.
+class TitleQuery(models.Model):
+	query = models.TextField()
+
+#class TitleQueryForm(ModelForm):
+#	class Meta:
+#		model = TitleQuery

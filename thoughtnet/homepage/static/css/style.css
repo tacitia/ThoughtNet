@@ -1,0 +1,34 @@
+textarea {
+	display: block;
+	margin: 10px;
+}
+
+#main {
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 50px;
+}
+
+button {
+	margin: 10px;
+	outline: none;
+}
+
+button.close {
+	margin: 0px;
+}
+
+.process-msg {
+	display: none;
+	width: 700px;
+	padding: 5px;
+	margin: 10px;
+}
+
+.inner-term-div {
+	min-height: 100px;
+	width: 400px;
+	display: inline-block;
+	vertical-align:top;
+}
